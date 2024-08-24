@@ -15,13 +15,12 @@
 </head>
 
 <body class="bg-light">
-    <h1 class="display-1 text-center">Transformações Geométricas 2d em tempo real</h1>
+    <h1 class="display-4 text-center fw-bold">Transformações Geométricas <br> 2D em Tempo Real</h1>
 
+    <hr>
 
     <section id="matriz-container" class="container-fluid justify-content-center text-center">
-        <button id="btnReset" class="btn btn-secondary border border-secondary">Resetar</button>
-        <button class="btn btn-link border border-secondary"><a href="../../index.html">Home</a></button>
-        <div class="container-fluid mt-3">
+        <div class="container-fluid mt-1">
             <div class="linha0">
                 <input class="valores" id="a" type="number" step="0.01" id="" value="1">
                 <input class="valores" id="b" type="number" step="0.01" id="" value="0">
@@ -39,11 +38,15 @@
             </div>
         </div>
     </section>
-
-    <div class="justify-content-center text-center align-items-center mb-5">
-        <canvas class="canvas mt-5 " id="plot" width="640" height="480">
+    
+    <div class="justify-content-center text-center align-items-center mb-2">
+        <canvas class="canvas mt-3 " id="plot" width="320" height="240">
             <span>seu navegador não suporta a canvas api</span>
         </canvas>
+    </div>
+    <div class="container-fluid justify-content-center text-center mt-5">
+        <button id="btnReset" class="btn btn-secondary border border-secondary">Resetar</button>
+        <button class="btn btn-link border border-secondary"><a href="../../index.html">Home</a></button>
     </div>
 </body>
 
