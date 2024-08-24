@@ -35,7 +35,7 @@ ctx.lineTo(tL.x, tL.y);
 ctx.closePath();
 ctx.stroke();
 
-const btnCalcular = document.querySelector("#btnCalc")
+const btnReset = document.querySelector("#btnReset");
 const matriz = document.querySelectorAll(".valores");
 
 matriz.forEach(e => {
@@ -44,7 +44,13 @@ matriz.forEach(e => {
     });
 })
 
-btnCalcular.addEventListener("click", () => {
+btnReset.addEventListener("click", () => {
+    matriz[0].value = 1;
+    matriz[1].value = 0;
+    matriz[2].value = 0;
+    matriz[3].value = 0;
+    matriz[4].value = 1;
+    matriz[5].value = 0;
     bidimensionalTransform(matriz);
 })
 
