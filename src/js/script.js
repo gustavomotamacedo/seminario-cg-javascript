@@ -12,10 +12,12 @@ const ctxEscalonamento = canvasEscalonamento.getContext("2d");
 const ctxCisalhamento = canvasCisalhamento.getContext("2d");
 const ctxEspelhamento = canvasEspelhamento.getContext("2d");
 
-offset = 100;
+offset = 30;
 x = 0;
 y = 0;
 h = 1;
+
+correction = offset *  2.001;
 
 var tl = {};
 var tr = {};
@@ -24,7 +26,7 @@ var br = {};
 
 drawBaseRect(ctxInicial);
 
-drawTransRect(ctxTranslacao, 100, 100);
+drawTransRect(ctxTranslacao, correction, correction);
 
 drawRotRect(ctxRotacao, 30);
 
@@ -81,10 +83,10 @@ function drawRotRect(ctx, deg) {
 
     t.a = Math.cos(rad);
     t.b = -Math.sin(rad);
-    t.tx = 100;
+    t.tx = correction;
     t.c = Math.sin(rad);
     t.d = Math.cos(rad);
-    t.ty = 100;
+    t.ty = correction;
 
     transform(t);
     draw(ctx);
@@ -95,10 +97,10 @@ function drawEscaRect(ctx, sx, sy) {
 
     t.a = sx;
     t.b = 0;
-    t.tx = 100;
+    t.tx = correction;
     t.c = 0;
     t.d = sy;
-    t.ty = 100;
+    t.ty = correction;
 
     transform(t)
     draw(ctx);
@@ -109,10 +111,10 @@ function drawCisRect(ctx, shx, shy) {
 
     t.a = 2;
     t.b = shx;
-    t.tx = 100;
+    t.tx = correction;
     t.c = shy;
     t.d = 2;
-    t.ty = 100;
+    t.ty = correction;
 
     transform(t)
     draw(ctx);
@@ -123,10 +125,10 @@ function drawEspRect(ctx, axis) {
 
     t.a = 2;
     t.b = 0;
-    t.tx = 300;
+    t.tx = correction;
     t.c = 0;
     t.d = 2;
-    t.ty = 250;
+    t.ty = correction;
 
     if (axis == "x") {
         t.a = -t.a;

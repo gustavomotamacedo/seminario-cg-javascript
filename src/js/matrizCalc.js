@@ -1,7 +1,7 @@
 const canva = document.querySelector("#plot");
 const ctx = canva.getContext("2d");
 
-var offset = 100;
+var offset = 30;
 var x = 0;
 var y = 0;
 var h = 1;

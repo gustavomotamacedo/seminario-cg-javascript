@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon">
     <title>Transformações Geométricas 2d em tempo real</title>
+    <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/matrizCalc.js" defer></script>
 
@@ -20,27 +21,27 @@
     <hr>
 
     <section id="matriz-container" class="container-fluid justify-content-center text-center">
-        <div class="container-fluid mt-1">
+        <div class="container-fluid mt-1 h-75">
             <div class="linha0">
-                <input class="valores" id="a" type="number" step="0.01" id="" value="1">
-                <input class="valores" id="b" type="number" step="0.01" id="" value="0">
-                <input class="valores" id="tx" type="number" step="0.01" id="" value="0">
+                <input class="valores w-25" id="a" type="number" step="0.01" id="" value="1">
+                <input class="valores w-25" id="b" type="number" step="0.01" id="" value="0">
+                <input class="valores w-25" id="tx" type="number" step="0.01" id="" value="0">
             </div>
             <div class="linha1">
-                <input class="valores" id="c" type="number" step="0.01" id="" value="0">
-                <input class="valores" id-="d" type="number" step="0.01" id="" value="1">
-                <input class="valores" id="ty" type="number" step="0.01" id="" value="0">
+                <input class="valores w-25" id="c" type="number" step="0.01" id="" value="0">
+                <input class="valores w-25" id-="d" type="number" step="0.01" id="" value="1">
+                <input class="valores w-25" id="ty" type="number" step="0.01" id="" value="0">
             </div>
             <div class="linha2">
-                <input class="valores" type="number" step="0.01" id="" value="0" disabled>
-                <input class="valores" type="number" step="0.01" id="" value="0" disabled>
-                <input class="valores" type="number" step="0.01" id="" value="1" disabled>
+                <input class="valores w-25" type="number" step="0.01" id="" value="0" disabled>
+                <input class="valores w-25" type="number" step="0.01" id="" value="0" disabled>
+                <input class="valores w-25" type="number" step="0.01" id="" value="1" disabled>
             </div>
         </div>
     </section>
     
     <div class="justify-content-center text-center align-items-center mb-2">
-        <canvas class="canvas mt-3 " id="plot" width="320" height="240">
+        <canvas class="canvas mt-3 h-100" id="plot">
             <span>seu navegador não suporta a canvas api</span>
         </canvas>
     </div>
