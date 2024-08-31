@@ -1,5 +1,7 @@
 const canva = document.querySelector("#plot");
 const ctx = canva.getContext("2d");
+const centerX = canva.width / 2;
+const centerY = canva.height / 2;
 
 var offset = 30;
 var x = 0;
@@ -32,6 +34,8 @@ ctx.lineTo(tR.x, tR.y);
 ctx.lineTo(bR.x, bR.y);
 ctx.lineTo(bL.x, bL.y);
 ctx.lineTo(tL.x, tL.y);
+ctx.lineWidth = 1;
+ctx.strokeStyle="#000";
 ctx.closePath();
 ctx.stroke();
 
@@ -43,6 +47,8 @@ matriz.forEach(e => {
         bidimensionalTransform(matriz);
     });
 })
+
+
 
 btnReset.addEventListener("click", () => {
     matriz[0].value = 1;
@@ -70,6 +76,38 @@ function bidimensionalTransform(matriz) {
     transform.c = mValues[3];
     transform.d = mValues[4];
     transform.ty = mValues[5];
+
+    if (
+        transform.a == 5 &&
+        transform.b == 5 &&
+        transform.tx == 0 &&
+        transform.c == -2.5 &&
+        transform.d == 2.5 &&
+        transform.ty == 75 
+    ) {
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.strokeStyle="#0F0";
+        ctx.stroke();
+        ctx.closePath();
+    } else if (
+        transform.a == 0.52 &&
+        transform.b == -0.85 &&
+        transform.c == 0.85 &&
+        transform.d == 0.52
+    ) {
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.strokeStyle="#0F0";
+        ctx.stroke();
+        ctx.closePath();
+    } else {
+        ctx.beginPath();
+        ctx.lineWidth = 1;
+        ctx.strokeStyle="#111";
+        ctx.stroke();
+        ctx.closePath();
+    }
 
     tL.xNow = (transform.a * tL.x) + (transform.b*tL.y) + (transform.tx * tL.h);
     tR.xNow = (transform.a * tR.x) + (transform.b*tR.y) + (transform.tx * tR.h);
