@@ -1,5 +1,8 @@
 const canva = document.querySelector("#plot");
 const ctx = canva.getContext("2d");
+const centerX = canva.width / 2;
+const centerY = canva.height / 2;
+
 
 var offset = 30;
 var x = 0;
@@ -9,6 +12,9 @@ var tL = {};
 var tR = {};
 var bL = {};
 var bR = {};
+
+console.log("CENTER X : " + (centerX - (offset/2)));
+console.log("CENTER Y : " + (centerY - (offset/2)));
 
 tL.x = x;
 tL.y = y;
@@ -91,6 +97,15 @@ function bidimensionalTransform(matriz) {
         transform.b == -0.85 &&
         transform.c == 0.85 &&
         transform.d == 0.52
+    ) {
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.strokeStyle="#0F0";
+        ctx.stroke();
+        ctx.closePath();
+    }  else if (
+        transform.tx == (centerX - (offset/2)) &&
+        transform.ty == (centerY - (offset/2))
     ) {
         ctx.beginPath();
         ctx.lineWidth = 4;
