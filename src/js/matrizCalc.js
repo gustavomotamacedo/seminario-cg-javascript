@@ -1,7 +1,5 @@
 const canva = document.querySelector("#plot");
 const ctx = canva.getContext("2d");
-const centerX = canva.width / 2;
-const centerY = canva.height / 2;
 
 var offset = 30;
 var x = 0;
@@ -47,8 +45,6 @@ matriz.forEach(e => {
         bidimensionalTransform(matriz);
     });
 })
-
-
 
 btnReset.addEventListener("click", () => {
     matriz[0].value = 1;
